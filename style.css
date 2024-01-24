@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 html {
     scroll-behavior: smooth;
-    
+
 }
 
 body {
@@ -133,22 +133,22 @@ body {
 
 }
 
-.rotate-box{
+.rotate-box {
     position: relative;
     width: 50%;
     height: 50%;
 }
 
 .button,
-.icon{
+.icon {
     position: absolute;
 }
 
-.icon{
+.icon {
     z-index: 1;
 }
 
-.button{
+.button {
     z-index: 2;
 }
 
@@ -173,18 +173,19 @@ body {
     flex-direction: column;
 }
 
-.contact div{
+.contact div {
     height: 50%;
 }
-.text{
+
+.text {
     color: #df0404;
 }
 
-.text1{
+.text1 {
     font-size: 3rem;
 }
 
-.text2{
+.text2 {
     font-size: 2rem;
 }
 
@@ -218,4 +219,66 @@ button {
 
 button {
     cursor: pointer;
+}
+
+.section3-wrapper {
+    width: min(100vw, 1440px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px
+}
+
+.skill {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 3rem;
+    font-family: monospace;
+    border: 2px solid green;
+    border-radius: 20px;
+}
+
+.skill i {
+    font-size: 10rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background: rgba(128, 0, 128, 0.337);
+        backdrop-filter: blur(20px);
+        margin: 0;
+
+    }
+
+    .skill i {
+        font-size: 8.5rem;
+    }
+
+    .skill h1 {
+        font-size: 2.5rem;
+    }
 }
