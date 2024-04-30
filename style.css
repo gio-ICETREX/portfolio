@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +9,6 @@
 
 html {
     scroll-behavior: smooth;
-
 }
 
 body {
@@ -23,12 +24,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 99;
 }
 
 .logo {
     font-size: 4rem;
-    font-family: 'nosifer', sans-serif;
-    font-weight: 800;
+    font-family: "Train One", system-ui;
     color: #FFF;
     margin-left: 50px;
 }
@@ -44,22 +45,29 @@ body {
 }
 
 .element {
-    text-decoration: none;
     font-size: 1.2rem;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #FFF;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .element:hover {
-    color: #ff0000;
+    color: #5fc70b;
+}
+
+.res {
+    display: none;
 }
 
 #section1,
 #section2,
 #section3,
 #section4 {
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
 }
@@ -80,9 +88,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-image: url(nika.jpg);
-    -webkit-background-clip: text;
-    background-clip: text; */
 }
 
 .welcome {
@@ -133,23 +138,55 @@ body {
 
 }
 
+.section3-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.skills {
+    height: 250px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #80240054;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    font-size: 5rem;
+    font-family: 'Lemon', serif;
+    flex-grow: 1;
+}
+
+.x1 {
+    color: #d55510;
+}
+
+.x2 {
+    color: #105ee5;
+}
+
+.x3 {
+    color: #eaed0c;
+}
+
 .rotate-box {
     position: relative;
     width: 50%;
     height: 50%;
-}
-
-.button,
-.icon {
-    position: absolute;
-}
-
-.icon {
-    z-index: 1;
-}
-
-.button {
-    z-index: 2;
 }
 
 #section4 {
@@ -162,6 +199,15 @@ body {
     align-items: center;
 }
 
+.section4-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #0000007a;
+}
+
 .contact,
 .mesig {
     width: 50%;
@@ -169,13 +215,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.479);
     flex-direction: column;
 }
 
-.contact div {
+.contact div,
+.mesig div{ 
     height: 50%;
 }
+
 
 .text {
     color: #df0404;
@@ -189,96 +236,192 @@ body {
     font-size: 2rem;
 }
 
-.mesig {
-    align-items: flex-start;
+.input-field,
+.message,
+.send-button {
+    border: 3px solid #008000;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    margin: 5px;
+    box-sizing: border-box;
 }
 
+.input-field {
+    width: 60%;
+}
 
-.input-field,
-textarea,
-button {
-    border: 3px solid green;
-    border-radius: 10px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    font-size: 20px;
+.send-button {
+    width: 30%;
 }
 
 .input-field:focus,
 .message:focus,
 .send-button:focus {
     outline: transparent;
-    border-color: rgb(255, 0, 0)
+    border-color: #ff0000
 }
 
 .message {
     resize: none;
 }
 
-button {
+.send-button {
     cursor: pointer;
 }
 
-.section3-wrapper {
-    width: min(100vw, 1440px);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@media screen and (max-width:1024px) {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -50%;
+        transform: translateX(50%);
+        width: 50%;
+        height: 100vh;
+        background: #2f00ff88;
+        backdrop-filter: blur(20px);
+        margin: 0;
+        transition: 0.5s;
+    }
 
-.container {
-    width: 90%;
-    height: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px
-}
+    .nav-bar.active {
+        right: 0;
+        transform: translateX(0);
+    }
 
-.skill {
-    width: 30%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    flex-grow: 1;
-    font-size: 3rem;
-    font-family: monospace;
-    border: 2px solid green;
-    border-radius: 20px;
-}
+    .list-container {
+        margin-top: 50px;
+        margin-left: 50px;
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+    }
 
-.skill i {
-    font-size: 10rem;
+    .res {
+        display: block;
+        font-size: 2rem;
+        color: #e205ff;
+    }
+
+    .res:active {
+        color: #fff;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+    }
+
+    .menu {
+        margin-right: 50px;
+    }
+
+    .section4-wrapper {
+        flex-direction: column;
+    }
+
+    .contact,
+    .mesig {
+        width: 100%;
+    }
+
+    .contact {
+        height: 50%;
+        justify-content: end;
+    }
+
+    .mesig {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .input-field,
+    .message,
+    .send-button {
+        width: max(70vw, 500px);
+        font-size: 15px;
+    }
+
+    .message {
+        height: clamp(250px, 20vh, 500px);
+    }
 }
 
 
 @media screen and (max-width: 768px) {
     .logo {
-        font-size: 2.5rem;
+        margin-left: 30px;
+        font-size: 3rem;
+    }
+
+    .menu {
+        margin-right: 30px;
+    }
+
+    .my-info {
+        font-size: 1.5rem;
+    }
+
+    .skills {
+        height: 200px;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .logo {
+        margin-left: 15px;
+        font-size: 2rem;
+    }
+
+    .menu {
+        margin-right: 15px;
     }
 
     .nav-bar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100vh;
-        background: rgba(128, 0, 128, 0.337);
-        backdrop-filter: blur(20px);
-        margin: 0;
-
+        width: 100%;
     }
 
-    .skill i {
-        font-size: 8.5rem;
+    .my-info {
+        font-size: 1rem;
     }
 
-    .skill h1 {
+    .skills {
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    .text1 {
         font-size: 2.5rem;
+    }
+
+    .text2 {
+        font-size: 1rem;
+    }
+
+    .mesig {
+        width: 100%;
+        align-items: center;
+    }
+
+    .mesig div {
+        height: 300px;
+    }
+
+    .input-field,
+    .message,
+    .send-button {
+        width: max(70vw, 250px);
+        font-size: 15px;
+        margin: 1px;
+    }
+
+    .message {
+        height: 200px;
     }
 }
